@@ -1,25 +1,31 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-
 import "./ActivityComponent.scss";
 import data from "./example.json";
 import { useLocale } from "../../i18n/hooks";
 
 const ActivityComponent = () => {
   const locale = useLocale();
-  const { t: _ } = useTranslation();
-
+  const { t } = useTranslation();
+  //const { t: _} = useTranslation();
+ 
+// update the hint state
   const [showHint, setShowHint] = useState(false);
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
+  const [hint, setHint] = useState<string>("");
 
   useEffect(() => {
-    setContent(data.hint[locale]);
-    setTitle(data.title[locale]);
-  }, []);
+  // Update title, content, and hint based on the current locale
+    setTitle(data.title[locale] || "");
+    setContent(data.content[locale] || "");
+    setHint(data.hint[locale] || "");
+  }, [locale]);
+  
+// handle functionality to toggle showHint 
 
   const handleToggleHint = useCallback(() => {
-    setShowHint(true);
+    setShowHint((prevShowHint) => !prevShowHint);
   }, []);
 
   return (
@@ -30,14 +36,14 @@ const ActivityComponent = () => {
       <div className="card-body">
         <p>{content}</p>
         <div className="text-end">
-          <button onClick={handleToggleHint} className="btn-end btn btn-hint">
-            {showHint ? _("hideHint") : _("showHint")}
+          <button onClick={handleToggleHint} className="btn btn-hint">
+            {showHint ? t("hideHint") : t("showHint")}
           </button>
         </div>
       </div>
       {showHint && (
         <div className="card-footer">
-          <p>** hint needs to be added here **</p>
+          <p>{hint}</p>
         </div>
       )}
     </div>
