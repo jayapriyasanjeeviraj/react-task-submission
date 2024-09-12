@@ -1,8 +1,36 @@
 #activity {
   button.btn.btn-hint {
     background:none;
-    border-color:tomato;
-    color:tomato;
+    border: 1px solid tomato; 
+    color: tomato; 
     font-weight:700;
+    padding: 6px 12px 6px 12px;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: tomato;
+      color: white; 
+    }
+
+    &:focus {
+      outline: none; /* Remove default focus outline */
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Custom focus outline */
+    }
   }
+
+/* Style for hint information section */
+.hint-info {
+background-color:#FF6347;
+padding: 8px 16px 24px 16px;
+gap: 10px;
+
+p {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px; 
+  color: #ffffff;
+  font-weight: 600; 
+  line-height: 21.28px; 
+  text-align: left;
+}
+}
 }

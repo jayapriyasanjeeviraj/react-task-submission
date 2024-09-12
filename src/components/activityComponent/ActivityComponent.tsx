@@ -8,7 +8,7 @@ const ActivityComponent = () => {
   const locale = useLocale();
   const { t } = useTranslation();
   //const { t: _} = useTranslation();
- 
+
 // update the hint state
   const [showHint, setShowHint] = useState(false);
   const [title, setTitle] = useState<string>("");
@@ -16,7 +16,7 @@ const ActivityComponent = () => {
   const [hint, setHint] = useState<string>("");
 
   useEffect(() => {
-  // Update title, content, and hint based on the current locale
+    // Update title, content, and hint based on the current locale
     setTitle(data.title[locale] || "");
     setContent(data.content[locale] || "");
     setHint(data.hint[locale] || "");
@@ -42,7 +42,7 @@ const ActivityComponent = () => {
         </div>
       </div>
       {showHint && (
-        <div className="card-footer">
+        <div className="card-footer hint-info">
           <p>{hint}</p>
         </div>
       )}
