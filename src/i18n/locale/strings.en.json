@@ -1,5 +1,8 @@
 {
   "welcome": "Welcome",
   "showHint": "show hint",
-  "hideHint": "hide hint"
+  "hideHint": "hide hint",
+  "switchToWelsh": "Switch language to Welsh",
+  "switchToEnglish": "Switch language to English"
+ 
 }

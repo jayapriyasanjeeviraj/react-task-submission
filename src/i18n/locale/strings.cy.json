@@ -1,5 +1,7 @@
 {
   "welcome": "Croeso",
-  "showHint": "dangos awgrym",
-  "hideHint": "cuddio awgrym"
+  "showHint": "Dangos Hyn",
+  "hideHint": "Cuddio Hyn",
+  "switchToWelsh": "Newid i'r Gymraeg",
+  "switchToEnglish": "Newid i Saesneg"
 }
